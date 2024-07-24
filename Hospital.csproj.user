@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <ApplicationDefinition Update="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Views\ActiveReservationsView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\AddDoctorView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\AddPatientView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\AddRoomView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\AddUserView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\AdminMain.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\ClosedReservationsView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\CloseReservationView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\CreateNewReservationView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\DoctorMain.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\DoctorsPatientsReservations.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\DoctorsView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\LoginView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\PatientsView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\RegistrarMain.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\RegistrarRoomsView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\RoomsView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\UsersView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Views\ActiveReservationsView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\AddDoctorView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\AddPatientView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\AddRoomView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\AddUserView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\AdminMain.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\ClosedReservationsView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\CloseReservationView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\CreateNewReservationView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\DoctorMain.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\DoctorsPatientsReservations.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\DoctorsView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\LoginView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\PatientsView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\RegistrarMain.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\RegistrarRoomsView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\RoomsView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\UsersView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

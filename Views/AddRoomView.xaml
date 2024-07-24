@@ -1,0 +1,54 @@
+﻿<Window x:Class="Hospital.Views.AddRoomView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:Hospital.Views"
+        Title="Add Room" Height="355" Width="445" WindowStartupLocation="CenterScreen">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Title -->
+        <TextBlock Text="Add New Room" FontSize="20" FontWeight="Bold" Margin="0,0,0,20" HorizontalAlignment="Center" Grid.RowSpan="2"/>
+
+        <!-- Room Number -->
+        <StackPanel Orientation="Horizontal" Margin="0,0,0,10" Grid.Row="2" VerticalAlignment="Center">
+            <Label Content="Room Number:" Width="120" VerticalAlignment="Center" FontSize="14"/>
+            <TextBox Text="{Binding Number, UpdateSourceTrigger=PropertyChanged}" Width="250" FontSize="14"/>
+        </StackPanel>
+
+        <!-- Floor -->
+        <StackPanel Orientation="Horizontal" Margin="0,0,0,10" Grid.Row="3" VerticalAlignment="Center">
+            <Label Content="Floor:" Width="120" VerticalAlignment="Center" FontSize="14"/>
+            <TextBox Text="{Binding Floor, UpdateSourceTrigger=PropertyChanged}" Width="250" FontSize="14"/>
+        </StackPanel>
+
+        <!-- Room Type -->
+        <StackPanel Orientation="Horizontal" Margin="0,0,0,10" Grid.Row="4" VerticalAlignment="Center">
+            <Label Content="Room Type:" Width="120" VerticalAlignment="Center" FontSize="14" />
+            <StackPanel Orientation="Horizontal">
+                <RadioButton Content="Private" GroupName="RoomType" IsChecked="{Binding IsPrivateChecked}" VerticalAlignment="Center" Margin="10,0"/>
+                <RadioButton Content="Shared" GroupName="RoomType" IsChecked="{Binding IsSharedChecked}" VerticalAlignment="Center" Margin="10,0"/>
+            </StackPanel>
+        </StackPanel>
+        
+        <!-- Capacity -->
+        <StackPanel Orientation="Horizontal" Margin="0,0,0,20" Grid.Row="5" VerticalAlignment="Center">
+            <Label Content="Capacity:" Width="120" VerticalAlignment="Center" FontSize="14"/>
+            <TextBox Text="{Binding Capacity, UpdateSourceTrigger=PropertyChanged}" Width="100" FontSize="14" HorizontalAlignment="Left"/>
+            <TextBlock Text="(Number of beds)" VerticalAlignment="Center" Margin="5,0"/>
+        </StackPanel>
+
+        <!-- Add Room Button -->
+        <Button Content="Add Room" Width="100" Height="35" HorizontalAlignment="Right" Background="#007ACC" Foreground="White" FontSize="14" FontWeight="Bold" Command="{Binding AddRoomCommand}" CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}" Grid.Row="6"/>
+
+        <!-- Error Message -->
+        <TextBlock Text="{Binding ErrorMessage}" Foreground="Red" HorizontalAlignment="Center" Margin="0,10,0,0" Grid.Row="7"/>
+    </Grid>
+</Window>

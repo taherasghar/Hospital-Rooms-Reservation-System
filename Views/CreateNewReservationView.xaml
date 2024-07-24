@@ -1,0 +1,84 @@
+﻿<Window x:Class="Hospital.Views.CreateNewReservationView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             xmlns:local="clr-namespace:Hospital.Views" Width="380" Height="510"
+          WindowStartupLocation="CenterScreen"
+  ResizeMode="NoResize">
+
+    <Grid Background="#F0F4F8">
+        <StackPanel>
+            <TextBlock Text="Create New Reservation" FontSize="24" FontWeight="SemiBold" Foreground="#333" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+
+            <ComboBox ItemsSource="{Binding AvailablePatients}" SelectedItem="{Binding SelectedPatient}" 
+          Margin="5">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock>
+                            <TextBlock.Text>
+                                <MultiBinding StringFormat="{}{0} {1}">
+                                    <Binding Path="FirstName" />
+                                    <Binding Path="LastName" />
+                                </MultiBinding>
+                            </TextBlock.Text>
+                        </TextBlock>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+            <!-- Room Type Selection -->
+            <TextBlock Text="Room Type" FontSize="16" FontWeight="SemiBold" Margin="5"/>
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <RadioButton Content="Private Room" IsChecked="{Binding IsPrivateRoomSelected}" Command="{Binding RoomTypeChangedCommand}" Margin="5" />
+                <RadioButton Content="Shared Room" IsChecked="{Binding IsSharedRoomSelected}" Command="{Binding RoomTypeChangedCommand}" Margin="5" />
+            </StackPanel>
+
+
+            <!-- Doctor Selection -->
+            <TextBlock Text="Select Doctor" FontSize="16" FontWeight="SemiBold" Margin="5"/>
+            <ComboBox ItemsSource="{Binding Doctors}" SelectedItem="{Binding SelectedDoctor}"
+                                Margin="5">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock>
+                            <TextBlock.Text>
+                                <MultiBinding StringFormat="{}{0} {1} | {2}">
+                                    <Binding Path="User.FirstName" />
+                                    <Binding Path="User.LastName" />
+                                    <Binding Path="Specialization"/>
+                                </MultiBinding>
+                            </TextBlock.Text>
+                        </TextBlock>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+
+            <!-- Bed Selection -->
+            <TextBlock Text="Select Bed" FontSize="16" FontWeight="SemiBold" Margin="5"/>
+            <ComboBox ItemsSource="{Binding AvailableBeds}" SelectedItem="{Binding SelectedBed}"                     Margin="5">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock>
+                            <TextBlock.Text>
+                                <MultiBinding StringFormat="{}Room: {0} | Label: {1}">
+                                    <Binding Path="Room.Number" />
+                                    <Binding Path="Label" />
+                                </MultiBinding>
+                            </TextBlock.Text>
+                        </TextBlock>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+            <!-- Display Selected Bed Label -->
+            <TextBlock Text="{Binding SelectedBed.Label, FallbackValue='No bed selected'}" FontSize="16" FontWeight="SemiBold" Margin="5" Foreground="#F8691D"/>
+
+          
+            <!-- DatePicker for EntryDate -->
+            <TextBlock Text="Entry Date" FontSize="16" FontWeight="SemiBold" Margin="5"/>
+            <DatePicker SelectedDate="{Binding EntryDate}" Margin="5" Width="200" />
+
+            <!-- Create Reservation Button -->
+            <Button Content="Create Reservation" Command="{Binding CreateReservationCommand}" Margin="5" Width="150" Height="40" Background="#F8691D" Foreground="White" FontWeight="Bold"  CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"/>
+        </StackPanel>
+    </Grid>
+</Window>
+ 
