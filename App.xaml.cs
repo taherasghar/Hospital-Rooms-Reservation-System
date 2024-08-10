@@ -22,7 +22,7 @@ namespace Hospital
             _host = Host.CreateDefaultBuilder()
                 .ConfigureServices((context, services) =>
                 {
-                    var connectionString = "Server=localhost;Database=Hospital;Trusted_Connection=True;TrustServerCertificate=True;MultipleActiveResultSets=True;";
+                    var connectionString = "Server=localhost;Database=Add_Your_Database_Here;Trusted_Connection=True;TrustServerCertificate=True;MultipleActiveResultSets=True;";
 
                     services.AddDbContext<AppDbContext>(options =>
                         options.UseSqlServer(connectionString));
