@@ -9,7 +9,7 @@ namespace Hospital.Data
         public AppDbContext CreateDbContext(string[] args)
         {
             var optionsBuilder = new DbContextOptionsBuilder<AppDbContext>();
-            var connectionString = "Server=localhost;Database=Hospital;Trusted_Connection=True;TrustServerCertificate=True;"; 
+            var connectionString = "Server=localhost;Database=Add_Your_Database_Here;Trusted_Connection=True;TrustServerCertificate=True;"; 
             optionsBuilder.UseSqlServer(connectionString);
 
             return new AppDbContext(optionsBuilder.Options);
